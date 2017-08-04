@@ -1,0 +1,96 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/5}{}{0}}
+\headcommand {\beamer@framepages {2}{5}}
+\headcommand {\sectionentry {1}{Introducci\IeC {\'o}n}{6}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@sectionpages {1}{5}}
+\headcommand {\beamer@subsectionpages {1}{5}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{6}{Motivaci\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\slideentry {1}{1}{1}{6/6}{Motivaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{1}{2}{7/7}{Motivaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{8}{Abordaje del modelado}}\headcommand {\beamer@subsectionpages {6}{7}}
+\headcommand {\slideentry {1}{2}{1}{8/8}{Abordaje del modelado}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{2}{2}{9/14}{Abordaje del modelado}{0}}
+\headcommand {\beamer@framepages {9}{14}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{15}{Objetivos}}\headcommand {\beamer@subsectionpages {8}{14}}
+\headcommand {\slideentry {1}{3}{1}{15/15}{Objetivos}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {1}{3}{2}{16/16}{Objetivos}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\sectionentry {2}{Estrategia de resoluci\IeC {\'o}n mediante acoplamiento de c\IeC {\'o}digos}{17}{Estrategia de resoluci\IeC {\'o}n mediante acoplamiento de c\IeC {\'o}digos}{0}}
+\headcommand {\beamer@sectionpages {6}{16}}
+\headcommand {\beamer@subsectionpages {15}{16}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{17}{Paradigma maestro-esclavo}}\headcommand {\beamer@subsectionpages {17}{16}}
+\headcommand {\slideentry {2}{1}{1}{17/17}{Paradigma maestro-esclavo}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{1}{2}{18/18}{Paradigma maestro-esclavo}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{19}{Modelos de comunicaci\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {17}{18}}
+\headcommand {\slideentry {2}{2}{1}{19/19}{Modelos de comunicaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {2}{2}{2}{20/20}{Modelos de comunicaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{21}{C\IeC {\'o}digos maestro utilizados}}\headcommand {\beamer@subsectionpages {19}{20}}
+\headcommand {\slideentry {2}{3}{1}{21/21}{C\IeC {\'o}digos maestro utilizados}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {2}{3}{2}{22/22}{C\IeC {\'o}digos maestro utilizados}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{23}{Arquitectura de acoplamiento montada en c\IeC {\'o}digos esclavos comunicados por paso de mensajes}}\headcommand {\beamer@subsectionpages {21}{22}}
+\headcommand {\slideentry {2}{4}{1}{23/23}{Arquitectura de acoplamiento montada en c\IeC {\'o}digos esclavos comunicados por paso de mensajes}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {2}{4}{2}{24/24}{Arquitectura de acoplamiento montada en c\IeC {\'o}digos esclavos comunicados por paso de mensajes}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\sectionentry {3}{Ejemplos de aplicaci\IeC {\'o}n}{25}{Ejemplos de aplicaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@sectionpages {17}{24}}
+\headcommand {\beamer@subsectionpages {23}{24}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{25}{Movimiento por fuerza boyante en un circuito cerrado}}\headcommand {\beamer@subsectionpages {25}{24}}
+\headcommand {\slideentry {3}{1}{1}{25/25}{Movimiento por fuerza boyante en un circuito cerrado}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {3}{1}{2}{26/26}{Movimiento por fuerza boyante en un circuito cerrado}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{27}{An\IeC {\'a}lisis del segundo sistema de parada de un reactor de investigaci\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {25}{26}}
+\headcommand {\slideentry {3}{2}{1}{27/27}{An\IeC {\'a}lisis del segundo sistema de parada de un reactor de investigaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {3}{2}{2}{28/28}{An\IeC {\'a}lisis del segundo sistema de parada de un reactor de investigaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{29}{Resoluci\IeC {\'o}n de redes hidr\IeC {\'a}ulicas de m\IeC {\'u}ltiples componentes}}\headcommand {\beamer@subsectionpages {27}{28}}
+\headcommand {\slideentry {3}{3}{1}{29/29}{Resoluci\IeC {\'o}n de redes hidr\IeC {\'a}ulicas de m\IeC {\'u}ltiples componentes}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {3}{3}{2}{30/30}{Resoluci\IeC {\'o}n de redes hidr\IeC {\'a}ulicas de m\IeC {\'u}ltiples componentes}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{31}{Extensi\IeC {\'o}n a problemas acoplados en modelos de n\IeC {\'u}cleo}}\headcommand {\beamer@subsectionpages {29}{30}}
+\headcommand {\slideentry {3}{4}{1}{31/31}{Extensi\IeC {\'o}n a problemas acoplados en modelos de n\IeC {\'u}cleo}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {3}{4}{2}{32/32}{Extensi\IeC {\'o}n a problemas acoplados en modelos de n\IeC {\'u}cleo}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\sectionentry {4}{Conclusiones}{33}{Conclusiones}{0}}
+\headcommand {\beamer@sectionpages {25}{32}}
+\headcommand {\beamer@subsectionpages {31}{32}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{33}{Logros alcanzados}}\headcommand {\beamer@subsectionpages {33}{32}}
+\headcommand {\slideentry {4}{1}{1}{33/33}{Logros alcanzados}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{34}{Trabajos futuros}}\headcommand {\beamer@subsectionpages {33}{33}}
+\headcommand {\slideentry {4}{2}{1}{34/34}{Trabajos futuros}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {4}{2}{2}{35/35}{Trabajos futuros}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\partentry {Ap\'{e}ndice}{1}}
+\headcommand {\beamer@partpages {1}{35}}
+\headcommand {\beamer@sectionpages {33}{35}}
+\headcommand {\beamer@subsectionpages {34}{35}}
+\headcommand {\beamer@appendixpages {36}}
+\headcommand {\sectionentry {5}{Ap\'{e}ndice}{36}{Ap\'{e}ndice}{1}}
+\headcommand {\beamer@sectionpages {36}{35}}
+\headcommand {\beamer@subsectionpages {36}{35}}
+\headcommand {\beamer@subsectionentry {1}{5}{1}{36}{For Further Reading}}\headcommand {\beamer@subsectionpages {36}{35}}
+\headcommand {\slideentry {5}{1}{1}{36/36}{For Further Reading}{1}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\beamer@partpages {36}{36}}
+\headcommand {\beamer@subsectionpages {36}{36}}
+\headcommand {\beamer@sectionpages {36}{36}}
+\headcommand {\beamer@documentpages {36}}
+\headcommand {\def \inserttotalframenumber {28}}
