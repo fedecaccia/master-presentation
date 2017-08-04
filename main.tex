@@ -1,0 +1,556 @@
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\documentclass{beamer}
+
+% Replace the \documentclass declaration above
+% with the following two lines to typeset your 
+% lecture notes as a handout:
+%\documentclass{article}
+%\usepackage{beamerarticle}
+
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor} % Como Cambridge colores de boca
+%\usetheme{Antibes} % Arbol arriba negro y azul
+%\usetheme{Bergen} % Azul y blanco simple, con barra izq de diseño
+%\usetheme{Berkeley} % Indice a la izq, azul y blanco, VA
+%\usetheme{Berlin} % Indice con circulos arriba, similar a Ilmenau, cuadrados en items, con titulos de seccion, titulo y subtitulo en filmina, azul y azul, VA
+%\usetheme{Boadilla} % Simple, sin indice
+%\usetheme{boxes} % Simple, sin indice
+%\usetheme{CambridgeUS} % Rojo y blanco, titulos arriba, VA
+%\usetheme{Copenhagen} % Titulos arriba en esquema
+%\usetheme{Darmstadt} % Circulos arriba y tambien subtitulo, negro y azul, con titulos de secion, titulo y subtitulo en filmina, VAAAAAAAAAAAAAA ESTEEEEEEE
+%\usetheme{default} % Blanco simple
+\usetheme{Frankfurt} % Titulos arriba en circulo, negro y azul, sin titulos de seccion, titulo y subtitulo en filmina, VAAAAAAAAAAAAAAAA ESTEEEEEEEEEEEEEE
+%\usetheme{Goettingen} % Titulos a la derecha en lila
+%\usetheme{Hannover} % Titulos a la izq en lila
+%\usetheme{Ilmenau} % Titulos arriba en puntos, azul y oscuro, subtitulo, VA
+%\usetheme{JuanLesPins} % Titulos arriba en arbol
+%\usetheme{Luebeck} % Titulos arriba en esquema
+%\usetheme{Madrid} % Azul sin indice
+%\usetheme{Malmoe} % Azul y negro titulos arriba en esquema
+%\usetheme{Marburg} % Indice en derecha con degrade azul negro
+%\usetheme{Montpellier} % simple blanco y lila titulos arriba en arbol, VA
+%\usetheme{PaloAlto} % Indice izq todo azul
+%\usetheme{Pittsburgh} % Simple, blanco sin indices
+%\usetheme{Rochester} % azul y blanco sin indice
+%\usetheme{Singapore} % titulos en circulo arriba, blanco y lila degrade
+%\usetheme{Szeged} % Titulos en circulo arriba, blanco y lila feo
+%\usetheme{Warsaw} % Titulos arriba en esquema, negro y azul
+
+% % Acentos
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc} % acentos
+\usepackage{multicol} % outline too long?
+
+\graphicspath{{figs/}}
+
+
+%----------------------------------
+% Comandos para cambiar portada
+
+
+% Other Commands
+\setbeamercolor{coloredboxstuff}{fg=white,bg=white!10!blue}
+
+% Ateneo
+\providecommand{\ateneo}{\institute}%
+\providecommand{\insertateneo}{\insertinstitute}%
+
+% Supervisor
+\def\rel#1{\gdef\@rel{#1}}
+\def\@rel{\PackageError{main}%
+{\protect\rel\space not given. Please insert name and surname of the supervisor}%
+{Example: \protect\rel{Name-surname}}
+}%
+
+% Thesis title page
+\defbeamertemplate*{title page}{torinoth}[1][]
+{
+   \vskip1.5em%
+   % Logo & Ateneo
+   \begin{centering}
+     \begin{beamercolorbox}[rounded=true,shadow=true,ht=2.5ex\paperwidth,sep=2pt,center,#1]{coloredboxstuff}%{ateneo page header}%
+       \usebeamerfont{ateneo}\insertateneo\par%
+     \end{beamercolorbox}
+     \vskip0.5em%
+  
+  
+     % Check-second-logo
+    %  \def\beamer@torinoth@secondlogotext{true}%
+    %  \ifx\beamer@torinoth@secondlogo\beamer@torinoth@secondlogotext%
+    %     % Check-third-logo
+    %     \def\beamer@torinoth@thirdlogotext{true}%
+    %     \ifx\beamer@torinoth@thirdlogo\beamer@torinoth@thirdlogotext%
+    %         \hbox{
+    %         % First-column
+    %         \begin{beamercolorbox}[wd=0.3\paperwidth,center]{}
+    %         \includegraphics[height=.2\paperheight]{\@titlepagesecondlogo}%
+    %         \end{beamercolorbox}
+    %         % Second-column
+    %         \begin{beamercolorbox}[wd=0.25\paperwidth,center]{}
+    %         \includegraphics[height=.2\paperheight]{\beamer@torinoth@titlepagelogo}%
+    %         \end{beamercolorbox}
+    %         % Third-column
+    %         \begin{beamercolorbox}[wd=0.275\paperwidth,center]{}
+    %         \includegraphics[height=.2\paperheight]{\@titlepagethirdlogo}%
+    %         \end{beamercolorbox}
+
+    %         }
+    %     \else%
+         
+        % % Logos
+        % \begin{figure}['ht]
+        % 	\begin{minipage}{0.4\linewidth}
+        % 		\centering
+        % 		\includegraphics[height=.23\paperheight]{logocnea.png}
+        % 	\end{minipage}
+        % 	\begin{minipage}{0.4\linewidth}
+        %     	\centering
+        % 	    \includegraphics[height=.2\paperheight]{logoib.png}
+        %     \end{minipage}
+        % \end{figure}
+        % \hbox{
+            %  % First-column
+            %  \begin{beamercolorbox}[wd=0.475\paperwidth,center]{}
+            %  %\includegraphics[height=.2\paperheight]{\beamer@torinoth@titlepagelogo}%
+            %  \includegraphics[height=.2\paperheight]{logocnea.png}%
+            %  \end{beamercolorbox}
+            %  % Second-column
+            %  \begin{beamercolorbox}[wd=0.325\paperwidth,center]{}
+            %  %\includegraphics[height=.2\paperheight]{\@titlepagesecondlogo}%
+            %  \includegraphics[height=.2\paperheight]{logoib.png}%
+            %  \end{beamercolorbox}}            
+    %     \fi%
+    %  \else%
+    %    \includegraphics[height=.2\paperheight]{\beamer@torinoth@titlepagelogo}%
+    %    \includegraphics[height=.2\paperheight]{logoib.png}%
+    % \fi%
+     \vfill%
+   \end{centering}
+  \vskip1.25em%
+  
+% % Logos
+% \begin{figure}['ht]
+% 	\begin{minipage}{0.3\linewidth}
+% 		\centering
+% 		\includegraphics[scale=0.2]{logocnea.png}
+% 	\end{minipage}
+% 	\begin{minipage}{0.3\linewidth}
+% 		\centering
+% 		\includegraphics[scale=0.1]{logoib.png}
+% 	\end{minipage}
+% \end{figure}
+  
+  
+  
+  
+  % Title
+  \begin{centering}
+     \begin{beamercolorbox}[wd=\paperwidth,sep=8pt,center,#1]{coloredboxstuff}%{title page header}
+       \usebeamerfont{title}\inserttitle\par% 
+     \end{beamercolorbox}%
+  \end{centering}
+
+  %\vskip0.75em\par%
+  \vskip3em\par%
+  
+  \begin{columns}
+  %%%%%%%%%%%%%%%%%%
+    % First column
+    \column{.5\paperwidth}%
+    %%%%%%%%%%%%%%%%%
+    % Placement of labels
+    % Assistant-supervisor-check
+    \ifx\beamer@torinoth@assistantsupervisor\beamer@torinoth@assistantsupervisortext%
+          % Number assistant supervisor check
+          \ifx\beamer@torinoth@secondassistantsupervisor\beamer@torinoth@secondassistantsuptext%
+          \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center,#1]{rel}
+		    \usebeamerfont{definition}\beamer@torinoth@superv%
+		    \end{beamercolorbox}
+          \vskip-0.25em%
+		    \ifx\beamer@torinoth@secondsupervisor\beamer@torinoth@secondsuptext%
+			    \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+			    \usebeamerfont{person}\@rel%
+			    \end{beamercolorbox}
+			    \vskip-0.25em%
+			    \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+			    \usebeamerfont{person}\@secondsupervisor%
+			    \end{beamercolorbox}
+			    \vspace{\stretch{0.6}}%
+		    \else
+			    \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+			    \usebeamerfont{person}\@rel%
+			    \end{beamercolorbox}
+			    \vspace{\stretch{0.6}}%
+		    \fi
+		    \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center,#1]{rel}
+		    \usebeamerfont{definition}\beamer@torinoth@assistantsupervisorlabel%
+		    \end{beamercolorbox}
+		    \begin{beamercolorbox}[ht=0.06\paperheight,sep=8pt,center,#1]{rel}%
+		    \usebeamerfont{person}\@assistantsupervisor%
+		    \end{beamercolorbox}
+          \begin{beamercolorbox}[ht=0.05\paperheight,sep=8pt,center,#1]{rel}%
+		    \usebeamerfont{person}\@secondassistantsupervisor%
+		    \end{beamercolorbox}
+		    \vskip-1.75em%
+            \else%
+                    \vspace{\stretch{0.6}}%
+		    \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center,#1]{rel}
+		    \usebeamerfont{definition}\beamer@torinoth@superv%
+		    \end{beamercolorbox}
+		    \ifx\beamer@torinoth@secondsupervisor\beamer@torinoth@secondsuptext%
+			    \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+			    \usebeamerfont{person}\@rel%
+			    \end{beamercolorbox}
+			    \vskip-0.25em%
+			    \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+			    \usebeamerfont{person}\@secondsupervisor%
+			    \end{beamercolorbox}
+			    \vspace{\stretch{0.6}}%
+		    \else%
+                           
+			    \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center,#1]{rel}%
+			    \usebeamerfont{person}\@rel%
+			    \end{beamercolorbox}
+			    \vspace{\stretch{0.6}}%
+		    \fi
+		    \begin{beamercolorbox}[ht=0.07\paperheight,sep=8pt,center,#1]{rel}
+		    \usebeamerfont{definition}\beamer@torinoth@assistantsupervisorlabel%
+		    \end{beamercolorbox}
+		    \begin{beamercolorbox}[ht=0.06\paperheight,sep=8pt,center,#1]{rel}%
+		    \usebeamerfont{person}\@assistantsupervisor%
+		    \end{beamercolorbox}
+		    %\vskip-2em%
+            \fi%
+    \else%
+       \vspace{\stretch{0.25}}%
+	    \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center,#1]{rel}
+	    %\usebeamerfont{definition}\beamer@torinoth@superv%
+	    \usebeamerfont{definition}\beamer{Director}%
+	    \end{beamercolorbox}
+	    
+	    \ifx\beamer@torinoth@secondsupervisor\beamer@torinoth@secondsuptext%
+		    \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+		     \usebeamerfont{person}\@rel%
+		     \end{beamercolorbox}
+		     \vspace{\stretch{0.5}}%
+		     \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+		     \usebeamerfont{person}\@secondsupervisor%
+		     \end{beamercolorbox}
+		    \vspace{\stretch{0.75}}%
+	    \else%
+		    \begin{beamercolorbox}[ht=0.065\paperheight,sep=8pt,center,#1]{rel}%
+		    \usebeamerfont{person}\@rel%
+		    \end{beamercolorbox}
+		    \vspace{\stretch{1}}%
+	    \fi%
+    \fi%
+
+    % Second column
+    \column{.5\paperwidth}%
+    %%%%%%%%%%%%%%%%%
+    % Placement of labels
+            \vskip-0.5em%
+	    \ifx\beamer@torinoth@secondcandidate\beamer@torinoth@secondcandtext%
+		    \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center,#1]{author}
+		    %\usebeamerfont{definition}\beamer@torinoth@cand%
+		    \usebeamerfont{definition}\beamer{Maestrando}%
+		     \end{beamercolorbox}
+		     \vskip-0.5em%
+		     % First-candidate
+		     \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+		     \usebeamerfont{person}\insertauthor%
+		     \end{beamercolorbox}
+		     \vskip-0.5em%
+		      % Second-candidate
+		     \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+		     \usebeamerfont{person}\@secondcandidate%
+		     \end{beamercolorbox}
+	     \else%
+		     \begin{beamercolorbox}[ht=0.075\paperheight,sep=8pt,center,#1]{author}
+		     %\usebeamerfont{definition}\beamer@torinoth@cand%
+		     \usebeamerfont{definition}\beamer{Maestrando}%
+		     \end{beamercolorbox}
+		      \vskip-0.5em%
+		      % First-candidate
+		     \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+		     \usebeamerfont{person}\insertauthor%
+		     \end{beamercolorbox}
+	     \fi
+  \end{columns}
+  % Selection of space to skip for the date label
+  %\def\beamer@torinoth@assistantsupervisortextf{false}%
+  %\ifx\beamer@torinoth@assistantsupervisor\beamer@torinoth@assistantsupervisortextf%
+    %\vskip1.5em%
+  %\else
+   %\vskip-1.35em%
+  %\fi
+  
+  %\vfill
+  % Date
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}%
+      \usebeamerfont{date}\insertdate{}%
+    \end{beamercolorbox}%\vskip0.5em
+  \end{centering}
+  %\vfill
+  %\vskip0.5em\par%
+
+        % Logos
+        \begin{figure}['ht]
+        	\begin{minipage}{0.4\linewidth}
+        		\centering
+        		\includegraphics[height=.23\paperheight]{logocnea.png}
+        	\end{minipage}
+        	\begin{minipage}{0.4\linewidth}
+            	\centering
+        	    \includegraphics[height=.2\paperheight]{logoib.png}
+            \end{minipage}
+        \end{figure}
+    
+    
+    \vskip2.5em\par%
+}
+
+
+% Original en portada vieja
+
+% \title{Acoplamiento multiescala en cálculos fluidodinámicos}
+
+% % A subtitle is optional and this may be deleted
+% % \subtitle{Optional Subtitle}
+
+% \author{Ing. Caccia, Federico A.\inst{1} \and Dr. Dari, Enzo\inst{2}}
+% % - Give the names in the same order as the appear in the paper.
+% % - Use the \inst{?} command only if the authors have different
+% %   affiliation.
+
+
+% \institute[Universities of Somewhere and Elsewhere] % (optional, but mostly needed)
+% {
+%   \inst{1}%
+%   Department of Computer Science\\
+%   University of Somewhere
+%   \and
+%   \inst{2}%
+%   Department of Theoretical Philosophy\\
+%   University of Elsewhere}
+% % - Use the \inst command only if there are several affiliations.
+% % - Keep it simple, no one is interested in your street address.
+
+% \date{Conference Name, 2013}
+% % - Either use conference name or its abbreviation.
+% % - Not really informative to the audience, more for people (including
+% %   yourself) who are reading the slides online
+
+
+% Con nueva portada
+\author{\textit{Ing. Caccia, Federico Agustín}}
+\rel{\textit{Dr. Dari, Enzo Alberto}}
+\title{Acoplamiento multiescala en cálculos fluidodinámicos}
+\ateneo{Tesis de Maestría en Ingeniería}
+\date{\today}
+
+
+\subject{Theoretical Computer Science}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.7cm]{university-logo}{logoib.png}
+% \logo{\pgfuseimage{university-logo}}
+
+
+\logo{
+    \makebox[0.98\paperwidth]{
+        \hspace{\dimexpr\paperwidth-2cm-5pt}%
+        \includegraphics[width=1cm,height=.8cm,keepaspectratio]{logocnea.png}
+        %\hspace{\dimexpr\paperwidth-2cm-5pt}%
+        \hspace{.2cm}%
+        \includegraphics[width=1cm,height=.8cm,keepaspectratio]{logoib.png}
+    }
+}
+
+
+% Número de páginas
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+
+% Outline al principio de cada sección
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+ % \begin{multicols}{2}
+    \small
+    \tableofcontents[currentsection,currentsubsection]
+ % \end{multicols}
+  \end{frame}
+}
+
+% Let's get started
+\begin{document}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+Primer Outline
+\begin{frame}{Outline}
+  \small
+  %\tableofcontents
+  \tableofcontents[hideallsubsections,pausesections]
+  %\tableofcontents[pausesections]
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Capítulos
+\input{cap1} % intro
+\input{cap2} % códigos
+\input{cap3} % cfd
+\input{conclusiones} % conclusiones
+\input{end} % fin
+\input{append}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+% \section{First Main Section}
+
+% \subsection{First Subsection}
+
+% \begin{frame}{First Slide Title}{Optional Subtitle}
+%   \begin{itemize}
+%   \item {
+%     My first point.
+%   }
+%   \item {
+%     My second point.
+%   }
+%   \end{itemize}
+% \end{frame}
+
+% \subsection{Second Subsection}
+
+% % You can reveal the parts of a slide one at a time
+% % with the \pause command:
+% \begin{frame}{Second Slide Title}
+%   \begin{itemize}
+%   \item {
+%     First item.
+%     \pause % The slide will pause after showing the first item
+%   }
+%   \item {   
+%     Second item.
+%   }
+%   % You can also specify when the content should appear
+%   % by using <n->:
+%   \item<3-> {
+%     Third item.
+%   }
+%   \item<4-> {
+%     Fourth item.
+%   }
+%   % or you can use the \uncover command to reveal general
+%   % content (not just \items):
+%   \item<5-> {
+%     Fifth item. \uncover<6->{Extra text in the fifth item.}
+%   }
+%   \end{itemize}
+% \end{frame}
+
+% \section{Second Main Section}
+
+% \subsection{Another Subsection}
+
+% \begin{frame}{Blocks}
+% \begin{block}{Block Title}
+% You can also highlight sections of your presentation in a block, with it's own title
+% \end{block}
+% \begin{theorem}
+% There are separate environments for theorems, examples, definitions and proofs.
+% \end{theorem}
+% \begin{example}
+% Here is an example of an example block.
+% \end{example}
+% \end{frame}
+
+% % Placing a * after \section means it will not show in the
+% % outline or table of contents.
+% \section*{Summary}
+
+% \begin{frame}{Summary}
+%   \begin{itemize}
+%   \item
+%     The \alert{first main message} of your talk in one or two lines.
+%   \item
+%     The \alert{second main message} of your talk in one or two lines.
+%   \item
+%     Perhaps a \alert{third message}, but not more than that.
+%   \end{itemize}
+  
+%   \begin{itemize}
+%   \item
+%     Outlook
+%     \begin{itemize}
+%     \item
+%       Something you haven't solved.
+%     \item
+%       Something else you haven't solved.
+%     \end{itemize}
+%   \end{itemize}
+% \end{frame}
+
+
+
+% % All of the following is optional and typically not needed. 
+% \appendix
+% \section<presentation>*{\appendixname}
+% \subsection<presentation>*{For Further Reading}
+
+% \begin{frame}[allowframebreaks]
+%   \frametitle<presentation>{For Further Reading}
+    
+%   \begin{thebibliography}{10}
+    
+%   \beamertemplatebookbibitems
+%   % Start with overview books.
+
+%   \bibitem{Author1990}
+%     A.~Author.
+%     \newblock {\em Handbook of Everything}.
+%     \newblock Some Press, 1990.
+ 
+    
+%   \beamertemplatearticlebibitems
+%   % Followed by interesting articles. Keep the list short. 
+
+%   \bibitem{Someone2000}
+%     S.~Someone.
+%     \newblock On this and that.
+%     \newblock {\em Journal of This and That}, 2(1):50--100,
+%     2000.
+%   \end{thebibliography}
+% \end{frame}
+
+\end{document}
+
+

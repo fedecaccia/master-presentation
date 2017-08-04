@@ -1,0 +1,45 @@
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Introducción}
+
+\subsection{Motivación}
+
+\begin{frame}{Introducción}{Motivación}
+  \begin{itemize}
+  \item {
+    My first point\footnote{asdasdsdad}.
+  }
+  \item {
+    My second point.
+  }
+  \end{itemize}
+\end{frame}
+
+\subsection{Modelado de sistemas complejos}
+
+% You can reveal the parts of a slide one at a time
+% with the \pause command:
+\begin{frame}{Introducción}{Modelado de sistemas complejos}
+  \begin{itemize}
+  \item {
+    First item\footnote{asdasdsdad}.
+    \pause % The slide will pause after showing the first item
+  }
+  \item {   
+    Second item\footnote{asdasdasssssssd}.
+  }
+  % You can also specify when the content should appear
+  % by using <n->:
+  \item<3-> {
+    Third item.
+  }
+  \item<4-> {
+    Fourth item.
+  }
+  % or you can use the \uncover command to reveal general
+  % content (not just \items):
+  \item<5-> {
+    Fifth item. \uncover<6->{Extra text in the fifth item.}
+  }
+  \end{itemize}
+\end{frame}
