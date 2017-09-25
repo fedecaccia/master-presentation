@@ -10,7 +10,7 @@
 % modify this file as you see fit and even to delete this copyright
 % notice. 
 
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 
 % Replace the \documentclass declaration above
 % with the following two lines to typeset your 
@@ -55,8 +55,27 @@
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc} % acentos
 \usepackage{multicol} % outline too long?
+\usepackage{tikz} % Scientific schemes
+\usetikzlibrary{arrows.meta} % Arrows
+\usetikzlibrary{calc} % Coordinate calculation
+\usetikzlibrary{positioning} % To get more advances positioning options
+\usetikzlibrary{babel} % To allow <>
+\usetikzlibrary{arrows} % To get more arrow heads
+\usetikzlibrary{shapes,snakes} % Node shapes
+
+\usepackage{mathrsfs}  % mathscr
+
+\usepackage{multirow}
+
 
 \graphicspath{{figs/}}
+
+\setbeamertemplate{caption}[numbered]
+\usepackage[font=small,labelfont=bf]{caption}
+
+\usepackage[normalem]{ulem} % cross line
+
+\usepackage{multimedia} % video
 
 
 %----------------------------------
@@ -366,7 +385,7 @@
 \date{\today}
 
 
-\subject{Theoretical Computer Science}
+\subject{Computational fluid dynamics}
 % This is only inserted into the PDF information catalog. Can be left
 % out. 
 
@@ -413,7 +432,7 @@
 
 \begin{frame}[plain]
   \titlepage{1cm}
-\end{frame}
+\end{frame} % <------ ESTO ME TIRA ERROR
 
 %Primer Outline
 \begin{frame}{Outline}
@@ -426,7 +445,7 @@
 
 % Capítulos
 \input{cap1} % intro
-\input{cap2} % códigos
+\input{cap2} % estrategia
 \input{cap3} % cfd
 \input{conclusiones} % conclusiones
 \input{end} % fin
@@ -531,6 +550,8 @@
 %   \frametitle<presentation>{For Further Reading}
     
 %   \begin{thebibliography}{10}
+
+
     
 %   \beamertemplatebookbibitems
 %   % Start with overview books.
