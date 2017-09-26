@@ -682,21 +682,52 @@ Descomposición disjunta de dominios en un modelo de red hidráulica con 8 incó
 {Ejemplos de aplicación}
 {Resolución de redes hidráulicas de múltiples componentes}
 
+\begin{itemize}
+\item Cada subsistema se modela con ecuaciones de continuidad y de conservación de energía.
+\item <2-> Ecuaciones de residuos:
+\begin{equation*}
+\left \{
+\begin{array}{rl}
+R_1 =& v_1^{2,guess} - v_1^{2,calc}(CB_1^1, P_1^{2,guess}, P_1^{3,guess}) \\
+R_2 =& v_1^{3,guess} - v_1^{3,calc}(CB_1^1, P_1^{2,guess}, P_1^{3,guess}) \\
+R_3 =& P_2^{1,guess} - P_2^{1,calc}(v_2^{1,guess}, CB_2^2, CB_2^3) \\
+...
+\end{array}
+\right .
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+{Ejemplos de aplicación}
+{Resolución de redes hidráulicas de múltiples componentes}
+%~ 
 Redes hidráulicas con regímenes de flujo laminar:
 
 \begin{figure}[ht]
-\begin{minipage}{.5\linewidth}
-\centering
-\subfloat{\includegraphics[scale=0.4]{net_linear_its.pdf}}\\
-\subfloat{\includegraphics[scale=0.4]{net_linear_fevals.pdf}}
-\end{minipage}\hfill
-\begin{minipage}{.5\linewidth}
-\centering
-\subfloat{\includegraphics[scale=0.45]{net_linear_its_broy.pdf}}
-\end{minipage}
+	\begin{minipage}{0.48\linewidth}
+      \centering
+      \includegraphics[scale=0.42]{net_linear_its.pdf}
+		%~ \caption[]{t=0 s}
+		%~ \label{asd}	
+	\end{minipage}
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\includegraphics[scale=0.42]{net_linear_fevals.pdf}
+		%~ \caption[]{t=40 s}
+		%~ \label{asd}	
+	\end{minipage}
 \end{figure}
 \end{frame}
-
+\begin{frame}
+{Ejemplos de aplicación}
+{Resolución de redes hidráulicas de múltiples componentes}
+Redes hidráulicas con regímenes de flujo laminar:
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{net_linear_its_broy.pdf}
+\end{figure}
+\end{frame}
 
 \begin{frame}
 {Ejemplos de aplicación}
@@ -719,5 +750,244 @@ Redes hidráulicas con regímenes de flujo turbulento:
 \begin{frame}
 {Ejemplos de aplicación}
 {Extensión a problemas acoplados en modelos de núcleo}
+
+La estrategia de resolución mediante acoplamiento de códigos desarrollada puede extenderse para resolver sistemas genéricos de ecuaciones acopladas:
+\begin{itemize}
+  \item <2-> Las variables de acople no necesariamente deben corresponder a condiciones de borde
+  \item <3-> Las variables de acople no necesariamente deben agruparse en pares
+\end{itemize}
+\visible<4->{
+Objetivo: Modelar la dinámica del núcleo de un reactor nuclear mediante acoplamiento de códigos que resuelvan diferentes fenómenos físicos:
+}
+\begin{itemize}
+  \item <5-> Neutrónica
+    \begin{itemize}
+    \item Distribución de flujo neutrónico
+    \item Quemado de elementos combustibles
+    \item Movimiento de barras
+    \end{itemize}
+  \item <6-> Termohidráulica
+    \begin{itemize}
+    \item Distribución de temperaturas
+    \item Distribución de densidad de refrigerante
+    \end{itemize}
+  \item <7-> $Swelling$ de pastillas % Altera propiedades termicas (k)
+  \item <8-> $Pellet-cladding$ interaction % Altera propiedades mecanicas (eps) termicas (k)
+  \item <9-> Otros
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+{Ejemplos de aplicación}
+{Extensión a problemas acoplados en modelos de núcleo}
+Primer modelo simplificado:
+acoplamiento neutrónico-termohidráulico en cálculo de quemado de elementos combustibles.
+Asumimos que:
+  \begin{itemize}
+    \item <2-> No hay movimiento de barras
+    \item <3-> No se modela comportamiento de materiales
+    \item <4-> Las secciones eficaces neutrónicas están condensadas por zonas y grupos de energía en previos cálculos de celda, y tienen dependencia con el quemado y con variables termohidráulicas
+   \end{itemize}
+
+\end{frame}
+
+
+\scriptsize
+\begin{frame}
+{Ejemplos de aplicación}
+{Extensión a problemas acoplados en modelos de núcleo}
+Modelo neutrónico:
+
+Cálculo de flujo neutrónico:
+\begin{equation*}
+\Delta \bar{\phi} = \frac{1}{k_{eff}}\Sigma \bar{\phi}
+\label{eq-nucleo}
+\end{equation*}
+donde $\bar{\phi}$ es una función vectorial con el valor del flujo neutrónico en cada punto del espacio para diferentes grupos de energía,
+$\Sigma$ es la matriz de secciones eficaces asociada a diferentes reacciones para diferentes grupos de energía,
+y $k_{eff}$ es el factor de multiplicación del reactor.
+
+\visible<2->{Cálculo de secciones eficaces:
+\begin{equation*}
+\Sigma = \Sigma \left ( N_{ref}, T_{ref}, T_{comb} \right )
+\label{eq-sigma}
+\end{equation*}
+
+donde $N_{ref}$ es la densidad del refrigerante, $T_{ref}$ es la temperatura del refrigerante, $T_{comb}$ es la temperatura del combustible , 
+y $B$ es el valor histórico de quemado  del material \cite{lamarsh}.
+}
+
+\visible<3->{
+Cálculo de distribución de potencia:
+\begin{equation*}
+P = \int_{vol} E_{fis,i} \Sigma_{fis,i} \phi_{i}
+\label{power}
+\end{equation*}
+donde $E_{fis,i}$ es la energía liberada por fisiones ocurridas en el rango de energía $i$,
+$\Sigma_{fis,i}$ es la sección eficaz de fisión condensada en el grupo de energía $i$ y
+$\phi_{i}$ es la componente del flujo neutrónico también condensada en el grupo de energía $i$.
+}
+
+\end{frame}
+
+
+
+\normalsize
+\begin{frame}
+{Ejemplos de aplicación}
+{Extensión a problemas acoplados en modelos de núcleo}
+
+El núcleo se modela como un único canal, en contacto con una única estructura que genera energía, con diámetro del $pin$ y altura equivalente a la altura de la suma total de $pines$.
+
+\visible<2->{La transferencia de calor a través de las estructuras de combustibles se estudia con un modelo de difusión.
+}
+
+\visible<3->{El modelo termohidráulico del refrigerante considera ecuaciones de mezcla del fluido en fases líquida y gaseosa:
+\begin{itemize}
+\item 2 Ecuaciones de continuidad;
+\item 2 Ecuaciones de momento unidimensionales;
+\item 2 Ecuaciones de conservación de energía.
+\end{itemize}
+}
+\end{frame}
+
+\normalsize
+\begin{frame}
+{Ejemplos de aplicación}
+{Extensión a problemas acoplados en modelos de núcleo}
+
+Estrategia de resolución:
+
+\begin{itemize}
+\item <2-> El código neutrónico recibe como $guess$ distribución de secciones eficaces y calcula distribución de potencia.
+\item <3-> El código termohidráulico recibe como $guess$ distribución de potencias y calcula distribución de temperaturas y densidades.
+\item <4-> Las variables se acoplan en zonas físicas predefinidas.
+\item <5-> La evolución se discretiza en intervalos de 5 o 10 días.
+\item <6-> El valor del quemado inicial es $B(\bar{x})=0$ en todo el dominio.
+\item <7-> En cada intervalo temporal se actualiza el valor de $B$ por zonas físicas, considerando la distribución de potencias constante.
+
+\end{itemize}
+
+\end{frame}
+
+
+
+\scriptsize
+\begin{frame}
+{Ejemplos de aplicación}
+{Extensión a problemas acoplados en modelos de núcleo}
+
+Acoplamiento de \textbf{Fermi} y \textbf{RELAP5} en modelo simple de núcleo:
+
+\begin{figure}[ht]
+	\begin{minipage}{0.6\linewidth}
+      \centering
+      \includegraphics[scale=0.43]{esq-fermi-relap.png}
+		%~ \caption[]{t=0 s}
+		%~ \label{asd}	
+	\end{minipage}
+	\begin{minipage}{0.35\linewidth}
+		\centering
+		\includegraphics[scale=0.16]{fuel_z5.png}
+		%~ \caption[]{t=40 s}
+		%~ \label{asd}	
+	\end{minipage}
+\end{figure}
+\visible<2->{
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c c cc } \hline
+      \multicolumn{1}{c}{Método} & \multirow{1}{*}{$\Delta$t} & \multicolumn{1}{c}{Extrapolación} & \multicolumn{1}{c}{Extrapolación}  & \multicolumn{1}{c}{Evaluaciones} & \multicolumn{1}{c}{Tiempo} \\ % \hline
+      \multicolumn{1}{c}{no lineal} & [días] & \multicolumn{1}{c}{de $\bar{x}^n$} & \multicolumn{1}{c}{de $\mathbb{J}^n$} & \multicolumn{1}{c}{totales} & \multicolumn{1}{c}{total [s]}\\ \hline %\hline
+      Broyden & 10 & $\mathscr{O}(1)$ & $\mathscr{O}(1)$ & 85 & 610 \\ %\hline
+      Picard & 10 & $\mathscr{O}(1)$ & - & 68 & 684 \\ %\hline
+      Punto fijo & 10 & $\mathscr{O}(1)$ & - & 87 & 628  \\ %\hline
+      Shamanskii & 10 & $\mathscr{O}(1)$ & $\mathscr{O}(0)$& 370 & 2663  \\ \hline
+   \end{tabular}   
+   \caption[Evaluaciones totales y tiempo total requerido por cada método no lineal en cálculo de quemado con \textbf{RELAP5} y \textbf{Fermi}]
+   {\scriptsize Evaluaciones totales y tiempo total requerido por cada método no lineal.}
+   \label{tabla-relap-fermi}
+\end{table}
+}
+
+\end{frame}
+
+
+
+
+\normalsize
+\begin{frame}
+{Ejemplos de aplicación}
+{Extensión a problemas acoplados en modelos de núcleo}
+
+Acoplamiento de \textbf{PUMA} y \textbf{RELAP5} en modelo de núcleo de CAREM-25:
+
+\begin{figure}[ht]
+	\begin{minipage}{0.48\linewidth}
+      \centering
+      \includegraphics[scale=0.18]{carem_geom_1.png}
+		%~ \caption[]{t=0 s}
+		%~ \label{asd}	
+	\end{minipage}
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\includegraphics[scale=0.15]{carem_geom_2.png}
+		%~ \caption[]{t=40 s}
+		%~ \label{asd}	
+	\end{minipage}
+\end{figure}
+
+\end{frame}
+
+
+
+\scriptsize
+\begin{frame}
+{Ejemplos de aplicación}
+{Extensión a problemas acoplados en modelos de núcleo}
+
+Acoplamiento de \textbf{PUMA} y \textbf{RELAP5} en modelo de núcleo de CAREM-25:
+
+\begin{figure}[ht]
+	\begin{minipage}{0.48\linewidth}
+      \centering
+      \includegraphics[scale=0.06]{carem_burnup_10day.png}
+		\caption[]{t=10 días}
+		%~ \label{asd}	
+	\end{minipage}
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\includegraphics[scale=0.12]{carem_burnup_400day.png}
+		\caption[]{t=400 días}
+		%~ \label{asd}	
+	\end{minipage}
+\end{figure}
+\visible<2->{
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ c c c c c } 
+      \hline
+      \multicolumn{1}{c}{Método} & \multirow{1}{*}{$\Delta$t} & \multicolumn{1}{c}{Extrapolación} & \multicolumn{1}{c}{Evaluaciones} & \multicolumn{1}{c}{Tiempo} \\ % \hline
+      \multicolumn{1}{c}{no lineal} & [días] & \multicolumn{1}{c}{de $\bar{x}^n$} & \multicolumn{1}{c}{totales} & \multicolumn{1}{c}{total [s]}\\ \hline %\hline
+      Picard & 5 & $\mathscr{O}(0)$ & 243 & 11019 \\ %\hline
+      Picard & 5 & $\mathscr{O}(1)$ & 195 & 9085  \\ %\hline
+      Picard & 10 & $\mathscr{O}(0)$ & 131 & 5898 \\ %\hline            
+      Picard & 10 & $\mathscr{O}(1)$ & 104 & 4774 \\ %\hline            
+      Punto fijo & 5 & $\mathscr{O}(0)$ & 139 & 5415 \\ %\hline            
+      Punto fijo & 5 & $\mathscr{O}(1)$ & 186 & 6990 \\ %\hline            
+      Punto fijo & 10 & $\mathscr{O}(0)$ & 101 & 3755  \\ % \hline      
+      Punto fijo & 10 & $\mathscr{O}(1)$ & 107 & 3919  \\ \hline            
+   \end{tabular}   
+   \caption[Evaluaciones totales y tiempo total requerido por cada método no lineal en cálculo de quemado con \textbf{RELAP5} y \textbf{Fermi}]
+   {\scriptsize Evaluaciones totales y tiempo total requerido por cada método no lineal.}
+   \label{tab-relap-puma}
+\end{table}
+
+
+
+}
 
 \end{frame}
