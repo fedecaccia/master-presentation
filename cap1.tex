@@ -397,12 +397,12 @@ q''_{S_1} = q''_{S_2}=q''
 \begin{itemize}
 \item 5. Ecuaciones modelos según condiciones de borde: 
   \begin{itemize}
-  \item a. Selección de condiciones de borde:
+  \item <1-> a. Selección de condiciones de borde:
     \begin{itemize}
     \item $S_1$ condición de tipo $Dirichlet$ (recibe $T^{guess}$)
     \item $S_2$ condición de tipo $Neumann$ (recibe $q''^{guess}$)
     \end{itemize}
-  \item b. Selección de ecuaciones modelos:
+  \item <2-> b. Selección de ecuaciones modelos:
   \begin{equation*}
   \left\{\begin{matrix}
   (q''^{calc})_{S_1} = \mathscr{N}_1\left ((T^{guess})_{S_1}\right ) \\
@@ -470,6 +470,12 @@ q''_{S_1} = q''_{S_2}=q''
       (T^{calc})_{S_2} = \mathscr{D}_2\left ((q''^{calc})_{S_1}\right )
       \end{matrix}\right.
       \end{equation*}
+    \item <2-> a2. $Neumann-to-Dirichlet$ (cálculos en serie):
+      \begin{equation*}
+      \left\{\begin{matrix}
+      ...
+      \end{matrix}\right.
+      \end{equation*}
     \end{itemize}
   \end{itemize}
 \end{itemize}
@@ -524,7 +530,7 @@ q''_{S_1} = q''_{S_2}=q''
   \begin{itemize}
   \item a. Métodos explícitos:
     \begin{itemize}
-    \item a2. $Punto$ $fijo$ (cálculos en paralelo):
+    \item a3. $Punto$ $fijo$ (cálculos en paralelo):
       \begin{equation*}
       \left\{\begin{matrix}
       (q''^{calc})_{S_1} = \mathscr{N}_1\left ((T^{guess})_{S_1}\right ) \\
@@ -678,16 +684,16 @@ Estrategia:
   \end{tikzpicture}
 
 \end{frame}
-
-\subsection{Objetivos}
-
-\begin{frame}{Introducción}{Objetivos}
-
-Considerando la motivación y la formulación precedente, queda establecido el siguiente objetivo general de la maestría:
-\vspace{1em}
-
-\textit{Desarrollar una estrategia de resolución de problemas complejos formulados mediante el
-Método de Descomposición Disjunta de Dominios que permita resolver subproblemas separados con códigos de cálculo específicos,
-manteniendo la interacción entre ellos solo mediante condiciones de borde.}
-
-\end{frame}
+%~ 
+%~ \subsection{Objetivos}
+%~ 
+%~ \begin{frame}{Introducción}{Objetivos}
+%~ 
+%~ Considerando la motivación y la formulación precedente, queda establecido el siguiente objetivo general de la maestría:
+%~ \vspace{1em}
+%~ 
+%~ \textit{Desarrollar una estrategia de resolución de problemas complejos formulados mediante el
+%~ Método de Descomposición Disjunta de Dominios que permita resolver subproblemas separados con códigos de cálculo específicos,
+%~ manteniendo la interacción entre ellos solo mediante condiciones de borde.}
+%~ 
+%~ \end{frame}
