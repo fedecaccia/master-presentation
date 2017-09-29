@@ -210,6 +210,35 @@ $\sout{$(R_{p,Q})_{2}^{1}  = Q_2^{1, guess} - Q_2^{1, calc}(p_2^{1, guess}, T_2^
 \end{frame}
 
 
+\begin{frame}
+{Ejemplos de aplicación}
+{Fluidodinámica en una fuente fría de neutrones}
+
+A mayor altura $H$ del intercambiador de calor, mayor caudal obtenido:
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ c c c c c c c } 
+      \hline
+      \multicolumn{1}{c}{$f_0$ $[W/m^3]$} & \multicolumn{1}{c}{$H / \Delta z$} & \multicolumn{1}{c}{$Ri$} & \multicolumn{1}{c}{$\Delta T$ $[K]$} & \multicolumn{1}{c}{$Q$$[m^3/s]$}& \multicolumn{1}{c}{$\Delta p$ $[Pa]$} \\ \hline
+      \multirow{3}{*}{$2\cdot10^4$} & $1$ & 3.4 & 0.7 & $3.2 \cdot 10^{-3}$ & 613 \\
+                         & $5$ & 1 & 0.5 & $4.2 \cdot 10^{-3}$ & 614 \\
+                         & $10$ & 0.5 & 0.3 & $4.5 \cdot 10^{-3}$ & 617 \\ \hline
+      \multirow{3}{*}{$2\cdot10^5$} & $1$ & 6.5 & 3.6 & $4.4 \cdot 10^{-3}$ & 595 \\
+                         & $5$ & 1.7 & 2.8 & $7.6 \cdot 10^{-3}$ & 605 \\
+                         & $10$ & 0.9 & 2.2 & $9.0 \cdot 10^{-3}$ & 620 \\ \hline
+      \multirow{3}{*}{$2\cdot10^6$} & $1$ & 10.6 & 24 & $8.9 \cdot 10^{-3}$ & 465 \\
+                         & $5$ & 2.2 & 18 & $1.7 \cdot 10^{-2}$ & 580 \\
+                         & $10$ & 0.9 & 11.6 & $2.1 \cdot 10^{-2}$ & 700 \\ \hline
+   \end{tabular}   
+   \caption[Principales resultados del cálculo para el análisis de la fuente fría variando la magnitud de la fuente interna y la altura del sistema de enfriamiento]
+   {Principales resultados del cálculo para el análisis de la fuente fría variando la magnitud de la fuente interna y la altura del sistema de enfriamiento.}
+   \label{tab-deuterio}
+\end{table}
+
+\end{frame}
+
+
 
 
 \begin{frame}
@@ -252,33 +281,7 @@ Distintos comportamientos según el $Ri$ obtenido:
 
 
 
-\begin{frame}
-{Ejemplos de aplicación}
-{Fluidodinámica en una fuente fría de neutrones}
 
-A mayor altura $H$ del intercambiador de calor, mayor caudal obtenido:
-
-\begin{table}[h!]
-  \centering
-  \begin{tabular}{ c c c c c c c } 
-      \hline
-      \multicolumn{1}{c}{$f_0$ $[W/m^3]$} & \multicolumn{1}{c}{$H / \Delta z$} & \multicolumn{1}{c}{$Ri$} & \multicolumn{1}{c}{$\Delta T$ $[K]$} & \multicolumn{1}{c}{$Q$$[m^3/s]$}& \multicolumn{1}{c}{$\Delta p$ $[Pa]$} \\ \hline
-      \multirow{3}{*}{$2\cdot10^4$} & $1$ & 3.4 & 0.7 & $3.2 \cdot 10^{-3}$ & 613 \\
-                         & $5$ & 1 & 0.5 & $4.2 \cdot 10^{-3}$ & 614 \\
-                         & $10$ & 0.5 & 0.3 & $4.5 \cdot 10^{-3}$ & 617 \\ \hline
-      \multirow{3}{*}{$2\cdot10^5$} & $1$ & 6.5 & 3.6 & $4.4 \cdot 10^{-3}$ & 595 \\
-                         & $5$ & 1.7 & 2.8 & $7.6 \cdot 10^{-3}$ & 605 \\
-                         & $10$ & 0.9 & 2.2 & $9.0 \cdot 10^{-3}$ & 620 \\ \hline
-      \multirow{3}{*}{$2\cdot10^6$} & $1$ & 10.6 & 24 & $8.9 \cdot 10^{-3}$ & 465 \\
-                         & $5$ & 2.2 & 18 & $1.7 \cdot 10^{-2}$ & 580 \\
-                         & $10$ & 0.9 & 11.6 & $2.1 \cdot 10^{-2}$ & 700 \\ \hline
-   \end{tabular}   
-   \caption[Principales resultados del cálculo para el análisis de la fuente fría variando la magnitud de la fuente interna y la altura del sistema de enfriamiento]
-   {Principales resultados del cálculo para el análisis de la fuente fría variando la magnitud de la fuente interna y la altura del sistema de enfriamiento.}
-   \label{tab-deuterio}
-\end{table}
-
-\end{frame}
 
 
 \begin{frame}
@@ -483,6 +486,19 @@ Q_1^1 = Q_2^1
 \end{frame}
 
 
+\begin{frame}
+{Ejemplos de aplicación}
+{Análisis del segundo sistema de parada de un reactor de investigación}
+Transporte de superficie libre en cañerías
+\begin{center}
+\movie[width=1\textwidth,showcontrols=true]
+{% placeholder = text or image
+\includegraphics[width=1\textwidth]{ls-portada.png}
+}%
+{figs/ls.ogv} % video filename
+\end{center}
+\end{frame}
+
 
 \begin{frame}
 {Ejemplos de aplicación}
@@ -558,39 +574,28 @@ Análisis de sensibilidad de resultados ante válvula en falla
 \end{figure}
 \end{frame}
 
-\begin{frame}
-{Ejemplos de aplicación}
-{Análisis del segundo sistema de parada de un reactor de investigación}
-Transporte de superficie libre en cañerías
-\begin{equation*}
-%\left\{ \begin{array}{rcl}
-%\displaystyle \frac{\partial\phi}{\partial t}+ (\bar{u} \cdot \nabla) \phi &=& 0
-\frac{\partial\phi}{\partial t}+ (\bar{u} \cdot \nabla) \phi = 0
-\label{eq-ls}
-%\end{array} \right.
-\end{equation*}
-\end{frame}
-\begin{frame}
-{Ejemplos de aplicación}
-{Análisis del segundo sistema de parada de un reactor de investigación}
-Transporte de superficie libre en cañerías
-\begin{center}
-\movie[width=1\textwidth,showcontrols=true]
-{% placeholder = text or image
-\includegraphics[width=1\textwidth]{ls-portada.png}
-}%
-{figs/ls.ogv} % video filename
-\end{center}
-\end{frame}
-\begin{frame}
-{Ejemplos de aplicación}
-{Análisis del segundo sistema de parada de un reactor de investigación}
-Transporte de superficie libre en cañerías
-\begin{figure}
-\centering{}
-\includegraphics[scale=0.7]{hvstlsZoom.pdf}
-\end{figure}
-\end{frame}
+% \begin{frame}
+% {Ejemplos de aplicación}
+% {Análisis del segundo sistema de parada de un reactor de investigación}
+% Transporte de superficie libre en cañerías
+% \begin{equation*}
+% %\left\{ \begin{array}{rcl}
+% %\displaystyle \frac{\partial\phi}{\partial t}+ (\bar{u} \cdot \nabla) \phi &=& 0
+% \frac{\partial\phi}{\partial t}+ (\bar{u} \cdot \nabla) \phi = 0
+% \label{eq-ls}
+% %\end{array} \right.
+% \end{equation*}
+% \end{frame}
+
+% \begin{frame}
+% {Ejemplos de aplicación}
+% {Análisis del segundo sistema de parada de un reactor de investigación}
+% Transporte de superficie libre en cañerías
+% \begin{figure}
+% \centering{}
+% \includegraphics[scale=0.7]{hvstlsZoom.pdf}
+% \end{figure}
+% \end{frame}
 
 
 
@@ -612,135 +617,127 @@ Estudio de métodos numéricos para la resolución del sistema de residuos
 
 
 
-\subsection{Resolución de redes hidráulicas de múltiples componentes}
+% \subsection{Resolución de redes hidráulicas de múltiples componentes}
 
-\begin{frame}
-{Ejemplos de aplicación}
-{Resolución de redes hidráulicas de múltiples componentes}
-Descomposición disjunta de dominios en un modelo de red hidráulica con 8 incógnitas reducidas en las interfaces de acoplamiento:
+% \begin{frame}
+% {Ejemplos de aplicación}
+% {Resolución de redes hidráulicas de múltiples componentes}
+% Descomposición disjunta de dominios en un modelo de red hidráulica con 8 incógnitas reducidas en las interfaces de acoplamiento:
 
-\begin{figure}[ht]
-\centering{}
-\begin{tikzpicture}
-[scale=0.8, every node/.style={scale=0.8}]
+% \begin{figure}[ht]
+% \centering{}
+% \begin{tikzpicture}
+% [scale=0.8, every node/.style={scale=0.8}]
 
-% Nodos
-\node [label={\small $S_3$}] at (0em,0em) (n8) {};
+% % Nodos
+% \node [label={\small $S_3$}] at (0em,0em) (n8) {};
 
-\node [right of=n8, xshift=3em, yshift=-2em, align=center] (n13) {\small $v_{3}^{3}, \quad v_{5}^{1},$ \\ $P_{3}^{3}$ \quad $P_{5}^{1}$};
-\node [right of=n13, xshift=3em, yshift=-2em, label={\small $S_5$}] (n14) {};
-\node [right of=n14, xshift=2em, yshift=-2em] (n16) {\small $CB_{5}^{3}$};
-\node [right of=n14, xshift=2em, yshift=2em] (n15) {\small $CB_{5}^{2}$};
+% \node [right of=n8, xshift=3em, yshift=-2em, align=center] (n13) {\small $v_{3}^{3}, \quad v_{5}^{1},$ \\ $P_{3}^{3}$ \quad $P_{5}^{1}$};
+% \node [right of=n13, xshift=3em, yshift=-2em, label={\small $S_5$}] (n14) {};
+% \node [right of=n14, xshift=2em, yshift=-2em] (n16) {\small $CB_{5}^{3}$};
+% \node [right of=n14, xshift=2em, yshift=2em] (n15) {\small $CB_{5}^{2}$};
 
-\node [right of=n8, xshift=3em, yshift=2em, align=center] (n9) {\small $v_{3}^{2}, \quad v_{4}^{1},$ \\ $P_{3}^{2}$ \quad $P_{4}^{1}$};
-\node [right of=n9, xshift=3em, yshift=0em, label={\small $S_4$}] (n10) {};
-\node [right of=n10, xshift=2em, yshift=-2em] (n12) {\small $CB_{4}^{3}$};
-\node [right of=n10, xshift=2em, yshift=2em] (n11) {\small $CB_{4}^{2}$};
+% \node [right of=n8, xshift=3em, yshift=2em, align=center] (n9) {\small $v_{3}^{2}, \quad v_{4}^{1},$ \\ $P_{3}^{2}$ \quad $P_{4}^{1}$};
+% \node [right of=n9, xshift=3em, yshift=0em, label={\small $S_4$}] (n10) {};
+% \node [right of=n10, xshift=2em, yshift=-2em] (n12) {\small $CB_{4}^{3}$};
+% \node [right of=n10, xshift=2em, yshift=2em] (n11) {\small $CB_{4}^{2}$};
 
-\node [left of=n8, xshift=-3em, yshift=2em, align=center] (n7) {\small $v_{1}^{3}, \quad v_{3}^{1},$ \\ $P_{1}^{3}$ \quad $P_{3}^{1}$};
-\node [left of=n7, xshift=-4em, yshift=3em, label={\small $S_1$}] (n2) {};
-\node [left of=n2, xshift=-1em, yshift=-0em] (n1) {\small $CB_{1}^{1}$};
+% \node [left of=n8, xshift=-3em, yshift=2em, align=center] (n7) {\small $v_{1}^{3}, \quad v_{3}^{1},$ \\ $P_{1}^{3}$ \quad $P_{3}^{1}$};
+% \node [left of=n7, xshift=-4em, yshift=3em, label={\small $S_1$}] (n2) {};
+% \node [left of=n2, xshift=-1em, yshift=-0em] (n1) {\small $CB_{1}^{1}$};
 
-\node [right of=n2, xshift=4em, yshift=3em, align=center] (n3) {\small $v_{1}^{2}, \quad v_{2}^{1},$ \\ $P_{1}^{2}$ \quad $P_{2}^{1}$};
-\node [right of=n3, xshift=3em, yshift=0em, label={\small $S_2$}] (n4) {};
-\node [right of=n4, xshift=2em, yshift=2em] (n5) {\small $CB_{2}^{2}$};
-\node [right of=n4, xshift=2em, yshift=-2em] (n6) {\small $CB_{2}^{3}$};
+% \node [right of=n2, xshift=4em, yshift=3em, align=center] (n3) {\small $v_{1}^{2}, \quad v_{2}^{1},$ \\ $P_{1}^{2}$ \quad $P_{2}^{1}$};
+% \node [right of=n3, xshift=3em, yshift=0em, label={\small $S_2$}] (n4) {};
+% \node [right of=n4, xshift=2em, yshift=2em] (n5) {\small $CB_{2}^{2}$};
+% \node [right of=n4, xshift=2em, yshift=-2em] (n6) {\small $CB_{2}^{3}$};
 
-% Conexiones
-\draw[|-] (n1.east) to [in=180, out=0] (n2.center);
-\draw[-o] (n2.center) to[in=180, out=0] (n3.west);
-\draw[-o] (n2.center) to[in=180, out=0] (n7.west);
+% % Conexiones
+% \draw[|-] (n1.east) to [in=180, out=0] (n2.center);
+% \draw[-o] (n2.center) to[in=180, out=0] (n3.west);
+% \draw[-o] (n2.center) to[in=180, out=0] (n7.west);
 
-\draw[o-] (n3.east) to[in=180, out=0] (n4.center);
-\draw[-|] (n4.center) to[in=180, out=0] (n5.west);
-\draw[-|] (n4.center) to[in=180, out=0] (n6.west);
+% \draw[o-] (n3.east) to[in=180, out=0] (n4.center);
+% \draw[-|] (n4.center) to[in=180, out=0] (n5.west);
+% \draw[-|] (n4.center) to[in=180, out=0] (n6.west);
 
-\draw[o-] (n7.east) to[in=180, out=0] (n8.center);
-\draw[-o] (n8.center) to[in=180, out=0] (n9.west);
-\draw[-o] (n8.center) to[in=180, out=0] (n13.west);
+% \draw[o-] (n7.east) to[in=180, out=0] (n8.center);
+% \draw[-o] (n8.center) to[in=180, out=0] (n9.west);
+% \draw[-o] (n8.center) to[in=180, out=0] (n13.west);
 
-\draw[o-] (n9.east) to[in=180, out=0] (n10.center);
-\draw[-|] (n10.center) to[in=180, out=0] (n11.west);
-\draw[-|] (n10.center) to[in=180, out=0] (n12.west);
+% \draw[o-] (n9.east) to[in=180, out=0] (n10.center);
+% \draw[-|] (n10.center) to[in=180, out=0] (n11.west);
+% \draw[-|] (n10.center) to[in=180, out=0] (n12.west);
 
-\draw[o-] (n13.east) to[in=180, out=0] (n14.center);
-\draw[-|] (n14.center) to[in=180, out=0] (n15.west);
-\draw[-|] (n14.center) to[in=180, out=0] (n16.west);
+% \draw[o-] (n13.east) to[in=180, out=0] (n14.center);
+% \draw[-|] (n14.center) to[in=180, out=0] (n15.west);
+% \draw[-|] (n14.center) to[in=180, out=0] (n16.west);
 
-\end{tikzpicture}
-%~ \caption[Descomposición disjunta de dominios en el modelado de redes hidráulicas]
-%~ {Descomposición disjunta de dominios en un modelo de red hidráulica con 16 incógnitas en las interfaces de acoplamiento.
-%~ La incógnita $v_{i}^{j}$ refiere a la velocidad media en el extremo $j$ del subsistema $i$.
-%~ La incógnita $P_{i}^{j}$ agrupa las presiones estática y dinámica medias en el extremo $j$ del subsistema $i$.
-%~ Las incógnitas pueden reducirse rápidamente a la mitad aplicando relaciones de continuidad de campos de variables.}
-%~ \label{net16}
-\end{figure}
+% \end{tikzpicture}
+% \end{figure}
 
-\end{frame}
+% \end{frame}
 
 
-\begin{frame}
-{Ejemplos de aplicación}
-{Resolución de redes hidráulicas de múltiples componentes}
+% \begin{frame}
+% {Ejemplos de aplicación}
+% {Resolución de redes hidráulicas de múltiples componentes}
 
-\begin{itemize}
-\item Cada subsistema se modela con ecuaciones de continuidad y de conservación de energía.
-\item <2-> Ecuaciones de residuos:
-\begin{equation*}
-\left \{
-\begin{array}{rl}
-R_1 =& v_1^{2,guess} - v_1^{2,calc}(CB_1^1, P_1^{2,guess}, P_1^{3,guess}) \\
-R_2 =& v_1^{3,guess} - v_1^{3,calc}(CB_1^1, P_1^{2,guess}, P_1^{3,guess}) \\
-R_3 =& P_2^{1,guess} - P_2^{1,calc}(v_2^{1,guess}, CB_2^2, CB_2^3) \\
-...
-\end{array}
-\right .
-\end{equation*}
-\end{itemize}
-\end{frame}
+% \begin{itemize}
+% \item Cada subsistema se modela con ecuaciones de continuidad y de conservación de energía.
+% \item <2-> Ecuaciones de residuos:
+% \begin{equation*}
+% \left \{
+% \begin{array}{rl}
+% R_1 =& v_1^{2,guess} - v_1^{2,calc}(CB_1^1, P_1^{2,guess}, P_1^{3,guess}) \\
+% R_2 =& v_1^{3,guess} - v_1^{3,calc}(CB_1^1, P_1^{2,guess}, P_1^{3,guess}) \\
+% R_3 =& P_2^{1,guess} - P_2^{1,calc}(v_2^{1,guess}, CB_2^2, CB_2^3) \\
+% ...
+% \end{array}
+% \right .
+% \end{equation*}
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}
-{Ejemplos de aplicación}
-{Resolución de redes hidráulicas de múltiples componentes}
-%~ 
-Redes hidráulicas con regímenes de flujo laminar:
+% \begin{frame}
+% {Ejemplos de aplicación}
+% {Resolución de redes hidráulicas de múltiples componentes}
+% %~ 
+% Redes hidráulicas con regímenes de flujo laminar:
 
-\begin{figure}[ht]
-	\begin{minipage}{0.48\linewidth}
-      \centering
-      \includegraphics[scale=0.42]{net_linear_its.pdf}
-		%~ \caption[]{t=0 s}
-		%~ \label{asd}	
-	\end{minipage}
-	\begin{minipage}{0.48\linewidth}
-		\centering
-		\includegraphics[scale=0.42]{net_linear_fevals.pdf}
-		%~ \caption[]{t=40 s}
-		%~ \label{asd}	
-	\end{minipage}
-\end{figure}
-\end{frame}
-\begin{frame}
-{Ejemplos de aplicación}
-{Resolución de redes hidráulicas de múltiples componentes}
-Redes hidráulicas con regímenes de flujo laminar:
-\begin{figure}
-\centering
-\includegraphics[scale=0.6]{net_linear_its_broy.pdf}
-\end{figure}
-\end{frame}
+% \begin{figure}[ht]
+% 	\begin{minipage}{0.48\linewidth}
+%       \centering
+%       \includegraphics[scale=0.42]{net_linear_its.pdf}
 
-\begin{frame}
-{Ejemplos de aplicación}
-{Resolución de redes hidráulicas de múltiples componentes}
+% 	\end{minipage}
+% 	\begin{minipage}{0.48\linewidth}
+% 		\centering
+% 		\includegraphics[scale=0.42]{net_linear_fevals.pdf}
 
-Redes hidráulicas con regímenes de flujo turbulento:
+% 	\end{minipage}
+% \end{figure}
+% \end{frame}
+% \begin{frame}
+% {Ejemplos de aplicación}
+% {Resolución de redes hidráulicas de múltiples componentes}
+% Redes hidráulicas con regímenes de flujo laminar:
+% \begin{figure}
+% \centering
+% \includegraphics[scale=0.6]{net_linear_its_broy.pdf}
+% \end{figure}
+% \end{frame}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.6]{net_nonLinear_fevals.pdf}
-\end{figure}
-\end{frame}
+% \begin{frame}
+% {Ejemplos de aplicación}
+% {Resolución de redes hidráulicas de múltiples componentes}
+
+% Redes hidráulicas con regímenes de flujo turbulento:
+
+% \begin{figure}[ht]
+% \centering
+% \includegraphics[scale=0.6]{net_nonLinear_fevals.pdf}
+% \end{figure}
+% \end{frame}
 
 
 

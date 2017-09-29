@@ -6,7 +6,7 @@
 {Estrategia de resolución mediante acoplamiento de códigos}
 {Paradigma maestro-esclavo}
 %~ 
-%~ \begin{figure}
+% ~ \begin{figure}
 \centering
 \begin{tikzpicture}[
   scale=0.7, every node/.style={scale=0.7},
@@ -112,42 +112,36 @@
 	\draw[arrow1] (masterpN.south) to[out=-90, in=105, distance=2em] node [midway, sloped, anchor=center, above]{\textit{I/O}} (slave5.north);
 
 \end{tikzpicture}
-%~ \caption[Esquema de comunicación entre programas implementado]{Esquema de comunicación entre los programas \textit{esclavos} y el programa \textit{maestro} implementado en el acoplamiento de códigos.
-%~ Los \textit{esclavos} se comunican solo con el \textit{maestro} y no intercambian datos entre sí.
-%~ Se utilizan dos modelos de comunicación diferentes.
-%~ En el primero, cada código \textit{esclavo} es comunicado con el código \textit{maestro} a por paso de mensajes (indicado como \textit{MPI}).
-%~ Como podrían correr en modo serial o paralelo, solo sus procesos \textit{raíces} establecen la comunicación con el proceso \textit{raíz} del programa \textit{maestro}.
-%~ En el segundo modelo de comunicación, los códigos \textit{esclavos} son directamente \textit{ejecutados} por el programa \textit{maestro} en uno o varios procesos.
-%~ En este modelo, la comunicación se establece solo mediante lectura y escritura de archivos (indicado como \textit{I/O}).}
-%~ \label{esquema-comunicacion}
 %~ \end{figure}
 
 \end{frame}
 
 
-\subsection{Modelos de comunicación}
+% \subsection{Modelos de comunicación}
+
+% \begin{frame}
+% {Estrategia de resolución mediante acoplamiento de códigos}
+% {Modelos de comunicación}
+
+% \begin{itemize}
+% \item <1-> Paso de mensajes: este modelo es implementado para comunicar procesos de programas en los cuales es posible modificar sus códigos fuente.
+%   \begin{itemize}
+%   \item Programas ejecutados en forma independiente y conectados
+%   \item Programas ejecutados en simultáneo como argumentos de $mpirun$
+%   \end{itemize}
+% \item <2-> Escritura de archivos de entrada y lectura de archivos de salida: este modelo es implementado para comunicar procesos de programas en los cuales NO es posible modificar sus códigos fuente.
+% \end{itemize}
+
+% \end{frame}
+
+
+% \subsection{Arquitectura de acoplamiento montada en códigos esclavos comunicados por paso de mensajes}
+% \subsection{Paradigma maestro esclavo}
 
 \begin{frame}
 {Estrategia de resolución mediante acoplamiento de códigos}
-{Modelos de comunicación}
-
-\begin{itemize}
-\item <1-> Paso de mensajes: este modelo es implementado para comunicar procesos de programas en los cuales es posible modificar sus códigos fuente.
-  \begin{itemize}
-  \item Programas ejecutados en forma independiente y conectados
-  \item Programas ejecutados en simultáneo como argumentos de $mpirun$
-  \end{itemize}
-\item <2-> Escritura de archivos de entrada y lectura de archivos de salida: este modelo es implementado para comunicar procesos de programas en los cuales NO es posible modificar sus códigos fuente.
-\end{itemize}
-
-\end{frame}
-
-
-\subsection{Arquitectura de acoplamiento montada en códigos esclavos comunicados por paso de mensajes}
-
-\begin{frame}
-{Estrategia de resolución mediante acoplamiento de códigos}
-{Arquitectura de acoplamiento montada en códigos esclavos comunicados por paso de mensajes}
+{Paradigma maestro-esclavo}
+% {Arquitectura de acoplamiento montada en códigos esclavos comunicados por paso de mensajes}
 
 \begin{figure}
 \centering{}
@@ -157,41 +151,41 @@
 
 \end{frame}
 
-\subsection{Códigos maestro utilizados}
+% \subsection{Códigos maestro utilizados}
 
-\begin{frame}
-{Estrategia de resolución mediante acoplamiento de códigos}
-{Códigos maestro utilizados}
+% \begin{frame}
+% {Estrategia de resolución mediante acoplamiento de códigos}
+% {Códigos maestro utilizados}
 
-\begin{itemize}
-\item \textbf{Coupling} \cite{coup-0d3d} \cite{coup-black} \cite{coup-hyd}
-  \begin{itemize}
-  \item <1-> Modelos de comunicación por paso de mensajes entre programas ejecutados de manera independiente
-  \item <2-> Cada interfaz de acople tiene $N$ pares de variables incógnitas
-  \item <3-> Métodos de resolución explícitos e implícitos implementados
-  \end{itemize}
-\end{itemize}
+% \begin{itemize}
+% \item \textbf{Coupling} \cite{coup-0d3d} \cite{coup-black} \cite{coup-hyd}
+%   \begin{itemize}
+%   \item <1-> Modelos de comunicación por paso de mensajes entre programas ejecutados de manera independiente
+%   \item <2-> Cada interfaz de acople tiene $N$ pares de variables incógnitas
+%   \item <3-> Métodos de resolución explícitos e implícitos implementados
+%   \end{itemize}
+% \end{itemize}
 
-\end{frame}
+% \end{frame}
 
-\begin{frame}
-{Estrategia de resolución mediante acoplamiento de códigos}
-{Códigos maestro utilizados}
+% \begin{frame}
+% {Estrategia de resolución mediante acoplamiento de códigos}
+% {Códigos maestro utilizados}
 
-\begin{itemize}
-\item \textbf{Newton} (desarrollado durante la maestría)
-  \begin{itemize}
-  \item <1-> Modelos de comunicación por paso de mensajes entre programas ejecutados de manera independiente o simultánea
-  \item <2-> Modelos de comunicación por manejo de archivos
-  \item <3-> Cada subsistema tiene $N$ incógnitas (extensión a acoplamientos genéricos)
-  \item <4-> Métodos de resolución explícitos e implícitos implementados
-  \item <5-> Mapeos de variables de entrada y salida ($\alpha-\beta$ y $\gamma-\delta$)
-  \end{itemize}
-\end{itemize}
+% \begin{itemize}
+% \item \textbf{Newton} (desarrollado durante la maestría)
+%   \begin{itemize}
+%   \item <1-> Modelos de comunicación por paso de mensajes entre programas ejecutados de manera independiente o simultánea
+%   \item <2-> Modelos de comunicación por manejo de archivos
+%   \item <3-> Cada subsistema tiene $N$ incógnitas (extensión a acoplamientos genéricos)
+%   \item <4-> Métodos de resolución explícitos e implícitos implementados
+%   \item <5-> Mapeos de variables de entrada y salida ($\alpha-\beta$ y $\gamma-\delta$)
+%   \end{itemize}
+% \end{itemize}
 
-%~ \begin{figure}
-\centering{}
-\visible <5>{\includegraphics[scale=0.4]{abgd.png}}
-%~ \end{figure}
+% %~ \begin{figure}
+% \centering{}
+% \visible <5>{\includegraphics[scale=0.4]{abgd.png}}
+% %~ \end{figure}
 
-\end{frame}
+% \end{frame}
