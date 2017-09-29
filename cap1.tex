@@ -6,12 +6,8 @@
 
 \begin{frame}{Introducción}{Motivación}
   \begin{itemize}
-  \item {
-    Estudios de sistemas con múltiples componenentes.
-  }
-  \item {
-    Reducción del costo computacional.
-  }
+  \item Estudios de sistemas con múltiples componenentes.
+  \item Reducción del costo computacional.
   \end{itemize}
   
   %~ \begin{figure}[ht]
@@ -68,7 +64,7 @@
       \begin{itemize}
       \item <2-> Desglosar en subsistemas
       \item <3-> Identificar uniones que relacionan interfaces de acoplamiento
-      \item <4-> Identificar pares de variables incógnitas en cada interfaz
+      \item <4-> Identificar pares de variables incógnitas en cada interfaz (problemas elípticos)
       \item <5-> Total de incógnitas: 2N
         \begin{itemize}
         \item <6-> N ecuaciones de continuidad que relacionan las incógnitas entre dos interfaces contiguas de distintos subsistemas
@@ -463,19 +459,19 @@ q''_{S_1} = q''_{S_2}=q''
   \begin{itemize}
   \item a. Métodos explícitos:
     \begin{itemize}
-    \item a1. $Dirichlet-to-Neumann$ (cálculos en serie):
+    \item a1. $Dirichlet-to-Neumann$:
       \begin{equation*}
       \left\{\begin{matrix}
       (q''^{calc})_{S_1} = \mathscr{N}_1\left ((T^{guess})_{S_1}\right ) \\
       (T^{calc})_{S_2} = \mathscr{D}_2\left ((q''^{calc})_{S_1}\right )
       \end{matrix}\right.
       \end{equation*}
-    \item <2-> a2. $Neumann-to-Dirichlet$ (cálculos en serie):
-      \begin{equation*}
-      \left\{\begin{matrix}
-      ...
-      \end{matrix}\right.
-      \end{equation*}
+    % \item <2-> a2. $Neumann-to-Dirichlet$ (cálculos en serie):
+    %   \begin{equation*}
+    %   \left\{\begin{matrix}
+    %   ...
+    %   \end{matrix}\right.
+    %   \end{equation*}
     \end{itemize}
   \end{itemize}
 \end{itemize}
@@ -530,7 +526,7 @@ q''_{S_1} = q''_{S_2}=q''
   \begin{itemize}
   \item a. Métodos explícitos:
     \begin{itemize}
-    \item a3. $Punto$ $fijo$ (cálculos en paralelo):
+    \item a2. $Punto$ $fijo$:
       \begin{equation*}
       \left\{\begin{matrix}
       (q''^{calc})_{S_1} = \mathscr{N}_1\left ((T^{guess})_{S_1}\right ) \\
@@ -588,7 +584,7 @@ q''_{S_1} = q''_{S_2}=q''
 \begin{itemize}
 \item 6. Seleccionar método numérico y resolver: 
   \begin{itemize}
-  \item a. Métodos implícitos (cálculos en paralelo):
+  \item a. Métodos implícitos:
   Búsqueda de raíces de las ecuaciones de residuos:
   \begin{equation*}
   \left\{\begin{matrix}
@@ -640,7 +636,7 @@ donde $\Delta \bar{x}^j=\bar{\epsilon}^j \cdot \Delta^j$
 
 Estrategia:
 \begin{itemize}
-\item <2-> Cada susistema utiliza su propia discretización temporal.
+\item <2-> Cada subsistema utiliza su propia discretización temporal.
 \item <3-> La discretización debe coincidir al comienzo (condiciones iniciales), al final y en puntos a lo largo de la evolución.
 \item <4-> Los resultados se acoplan en estos puntos de coincidencia. 
 \item <5-> Usando métodos iterativos, cada iteración comienza la resolución desde el último punto acoplado (en el que convergieron los resultados).

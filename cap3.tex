@@ -424,7 +424,7 @@ $\sum_i K_i$     & 1.13           \\ \hline
 
 Subsistema 3-D:
 
-\begin{equation}
+\begin{equation*}
 \left\{ \begin{array}{l}
 \displaystyle \frac{\partial \bar{U} }{\partial t} + ( \bar{U} \cdot \nabla) \bar{U} = - \frac {\nabla P^*}{\rho} + 
 \nabla \cdot \left[ \left( \nu + \nu_T \right) \left( \nabla \bar{U} + \nabla U^T \right) \right] +\bar{f} \\
@@ -436,7 +436,7 @@ Subsistema 3-D:
 + \nabla \cdot \left( c_{\epsilon} \frac{\kappa^2}{\epsilon} \nabla \epsilon \right) - c_2 \frac{\epsilon}{\kappa}
 \label{eq-mani}
 \end{array} \right.
-\end{equation}
+\end{equation*}
 donde $\bar{f}$ es una fuerza volumétrica, 
 $\kappa$ es la energía cinética turbulenta, $\epsilon$ es la disipación viscosa de energía turbulenta,
 $\nu_T$ es la viscosidad turbulenta y $P^*$ es la presión efectiva del sistema, que se calcula como
@@ -454,7 +454,8 @@ $c_\mu=0.09$, $c_1=0.126$, $c_2=1.92$ y $c_\epsilon=0.07$ \cite{durbin}.
 
 Estrategia de resolución: 
 \begin{itemize}
-\item Ecuaciones de continuidad:
+\item Elección de variables: $\{p,Q\}$
+\item <2->Ecuaciones de continuidad:
 \begin{equation*}
 \left\{ \begin{array}{l}
 p_1^1 = p_2^1 \\
@@ -462,12 +463,12 @@ Q_1^1 = Q_2^1
 \end{array}
 \right.
 \end{equation*}
-\item <2-> Selección de condiciones de borde:
+\item <3-> Selección de condiciones de borde:
     \begin{itemize}
     \item Subsistema 0-D: condición de tipo $Neumann$
     \item Subsistema 3-D: condición de tipo $Dirichlet$
     \end{itemize}
-\item <3-> Ecuaciones de residuos:
+\item <4-> Ecuaciones de residuos:
 
 \begin{equation*}
 \left\{ \begin{array}{l}
@@ -903,7 +904,7 @@ Acoplamiento de \textbf{Fermi} y \textbf{RELAP5} en modelo simple de núcleo:
       \multicolumn{1}{c}{no lineal} & [días] & \multicolumn{1}{c}{de $\bar{x}^n$} & \multicolumn{1}{c}{de $\mathbb{J}^n$} & \multicolumn{1}{c}{totales} & \multicolumn{1}{c}{total [s]}\\ \hline %\hline
       Broyden & 10 & $\mathscr{O}(1)$ & $\mathscr{O}(1)$ & 85 & 610 \\ %\hline
       Picard & 10 & $\mathscr{O}(1)$ & - & 68 & 684 \\ %\hline
-      Punto fijo & 10 & $\mathscr{O}(1)$ & - & 87 & 628  \\ %\hline
+      % Punto fijo & 10 & $\mathscr{O}(1)$ & - & 87 & 628  \\ %\hline
       Shamanskii & 10 & $\mathscr{O}(1)$ & $\mathscr{O}(0)$& 370 & 2663  \\ \hline
    \end{tabular}   
    \caption[Evaluaciones totales y tiempo total requerido por cada método no lineal en cálculo de quemado con \textbf{RELAP5} y \textbf{Fermi}]
